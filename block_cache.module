@@ -17,22 +17,22 @@ function block_cache_form_block_form_alter(&$form, FormStateInterface $form_stat
 
   // This will automatically be saved in the third party settings.
   $form['third_party_settings']['#tree'] = TRUE;
-  $form['third_party_settings']['block_cache'] = array(
+  $form['third_party_settings']['block_cache'] = [
     '#type' => 'details',
     '#title' => t('Block Cache'),
-  );
-  $form['third_party_settings']['block_cache']['miliseconds'] = array(
+  ];
+  $form['third_party_settings']['block_cache']['miliseconds'] = [
     '#type' => 'number',
     '#min' => 0,
     '#title' => t('Timeout'),
     '#description' => t('Miliseconds, example: 3000 for 3 seconds'),
     '#default_value' => $block->getThirdPartySetting('block_cache', 'miliseconds'),
-  );
-  $form['third_party_settings']['block_cache']['disable'] = array(
+  ];
+  $form['third_party_settings']['block_cache']['disable'] = [
     '#type' => 'checkbox',
     '#title' => t('Disable cache'),
     '#default_value' => $block->getThirdPartySetting('block_cache', 'disable', FALSE),
-  );
+  ];
 }
 
 /**

@@ -13,4 +13,5 @@ As usual download and enable.
 
 ## Usuage
 
-Go to block overview "_admin/structure/block"_ click "_configure_" from any block.
+Go to block overview "_admin/structure/block"_ click "_configure_"
+from any block.
