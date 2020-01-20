@@ -4,8 +4,8 @@ Allows site builders to set cache setting for each block.
 
 ## Feature
 
-\- Disable cache
-\- Cache timeout
+- Disable cache
+- Cache timeout
 
 ## Installation
 
