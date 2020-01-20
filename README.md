@@ -1,17 +1,21 @@
-# Block cache for Drupal 8
+# INTRODUCTION
 
 Allows site builders to set cache setting for each block.
 
-## Feature
+# FEATURE
 
 - Disable cache
 - Cache timeout
+ 
+# REQUIREMENTS
 
-## Installation
+Drupal:block
+
+# INSTALLATION
 
 As usual download and enable.
 
-## Usuage
+# CONFIGURATION
 
-Go to block overview "_admin/structure/block"_ click "_configure_"
+Go to block overview `/admin/structure/block` click `configure`
 from any block.
