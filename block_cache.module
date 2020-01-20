@@ -10,8 +10,8 @@ use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\block\Entity\Block;
 
 /**
-  * Implements hook_help().
-  */
+ * Implements hook_help().
+ */
 function block_cache_help($path, $arg) {
   switch ($path) {
 
