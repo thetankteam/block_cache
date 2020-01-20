@@ -15,11 +15,10 @@ use Drupal\block\Entity\Block;
 function block_cache_help($path, $arg) {
   switch ($path) {
 
-    // Main module help for the block_cache module
+    // Main module help for the block_cache module.
     case 'admin/help#block_cache':
       $output = '<p>Block Cache Allows site builders to set cache setting for each block.</p>';
       $output .= '<p>For more information, please visit the <a href="https://www.drupal.org/project/block_cache">official project page on Drupal.org</a>.</p>';
-      
       return $output;
   }
 }
