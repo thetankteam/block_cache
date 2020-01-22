@@ -14,7 +14,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
  * Implements hook_help().
  */
 function block_cache_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_match) {
+  switch ($route_name) {
     // Main module help for the block_cache module.
     case 'help.page.block_cache':
       $output = '';
