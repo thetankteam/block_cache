@@ -8,17 +8,27 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\block\Entity\Block;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Implements hook_help().
  */
-function block_cache_help($path, $arg) {
-  switch ($path) {
-
+function block_cache_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_match) {
     // Main module help for the block_cache module.
-    case 'admin/help#block_cache':
-      $output = '<p>Block Cache Allows site builders to set cache setting for each block.</p>';
+    case 'help.page.block_cache':
+      $output = '';
+
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>Block Cache Allows site builders to set cache setting for each block.</p>';
+
+      $output .= '<h3>' . t('Installation note') . '</h3>';
+      $output .= '<dl>';
+      $output .= '<dt>' . t('Enable the module on <a href=":extend_link">extend menu</a>.', [':extend_link' => \Drupal::url('system.modules_list')]) . '</dt>';
+      $output .= '</dl>';
+
       $output .= '<p>For more information, please visit the <a href="https://www.drupal.org/project/block_cache">official project page on Drupal.org</a>.</p>';
+
       return $output;
   }
 }
