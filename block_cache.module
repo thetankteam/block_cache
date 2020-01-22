@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Module for adding classes to blocks.
+ * Module for adding cache setting to blocks.
  */
 
 use Drupal\Core\Form\FormStateInterface;
