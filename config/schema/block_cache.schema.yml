@@ -5,6 +5,9 @@ block.block.*.third_party.block_cache:
     disable:
       type: boolean
       label: Disable cache
+    force_disable:
+      type: boolean
+      label: Force disable
     miliseconds:
       type: integer
       label: Timeout miliseconds
