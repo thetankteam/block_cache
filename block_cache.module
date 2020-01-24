@@ -20,14 +20,14 @@ function block_cache_help($route_name, RouteMatchInterface $route_match) {
       $output = '';
 
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>Block Cache Allows site builders to set cache setting for each block.</p>';
+      $output .= '<p>' . t('Block Cache Allows site builders to set cache setting for each block.') . '</p>';
 
       $output .= '<h3>' . t('Installation note') . '</h3>';
       $output .= '<dl>';
       $output .= '<dt>' . t('Enable the module on <a href=":extend_link">extend menu</a>.', [':extend_link' => \Drupal::url('system.modules_list')]) . '</dt>';
       $output .= '</dl>';
 
-      $output .= '<p>For more information, please visit the <a href="https://www.drupal.org/project/block_cache">official project page on Drupal.org</a>.</p>';
+      $output .= '<p>' . t('For more information, please visit the <a href=":project_link">official project page on Drupal.org</a>.', [':project_link' => 'https://www.drupal.org/project/block_cache']) . '</p>';
 
       return $output;
   }
