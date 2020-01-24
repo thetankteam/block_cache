@@ -57,6 +57,12 @@ function block_cache_form_block_form_alter(&$form, FormStateInterface $form_stat
     '#title' => t('Disable cache'),
     '#default_value' => $block->getThirdPartySetting('block_cache', 'disable', FALSE),
   ];
+  $form['third_party_settings']['block_cache']['force_disable'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Force disable'),
+    '#description' => t("<strong>Note:</strong> Above disable cache doesn't bypass for anonymous user caching but this will allows you to. But you'll lose page caching ability on wherever this block exists."),
+    '#default_value' => $block->getThirdPartySetting('block_cache', 'force_disable', FALSE),
+  ];
 }
 
 /**
@@ -67,14 +73,25 @@ function block_cache_block_build_alter(array &$build, BlockPluginInterface $bloc
 
   $block_entity = Block::load($block_machine_name);
   if ($block_entity) {
+    $force_disable = $block_entity->getThirdPartySetting('block_cache', 'force_disable', FALSE);
     $disable = $block_entity->getThirdPartySetting('block_cache', 'disable', FALSE);
     $miliseconds = $block_entity->getThirdPartySetting('block_cache', 'miliseconds');
 
+    // Cache with timer.
     if ($miliseconds) {
       $build['#cache']['max-age'] = $miliseconds;
     }
 
+    // Disable cache using cache age.
     if ($disable == TRUE) {
+      $build['#cache']['max-age'] = 0;
+    }
+
+    // This disable page caching wherever this block has been placed.
+    if ($force_disable == TRUE) {
+      \Drupal::service('page_cache_kill_switch')->trigger();
+
+      // Caching still works unless disabling it's timer.
       $build['#cache']['max-age'] = 0;
     }
   }
