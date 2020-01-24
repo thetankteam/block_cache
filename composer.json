@@ -1,0 +1,17 @@
+{
+  "name": "drupal/block_cache",
+  "description": "Allows site builders to set cache setting for each block",
+  "type": "drupal-module",
+  "keywords": ["Drupal", "block_cache", "Block Cache"],
+  "homepage": "https://www.drupal.org/project/block_cache",
+  "authors": [
+    {
+      "name": "Thiha Thit",
+      "homepage": "https://www.drupal.org/u/thihathit",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/block_cache"
+  },
+}
