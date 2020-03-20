@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\block\Entity\Block;
 use Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\Core\Url;
 
 /**
  * Implements hook_help().
@@ -24,7 +25,7 @@ function block_cache_help($route_name, RouteMatchInterface $route_match) {
 
       $output .= '<h3>' . t('Installation note') . '</h3>';
       $output .= '<dl>';
-      $output .= '<dt>' . t('Enable the module on <a href=":extend_link">extend menu</a>.', [':extend_link' => \Drupal::url('system.modules_list')]) . '</dt>';
+      $output .= '<dt>' . t('Enable the module on <a href=":extend_link">extend menu</a>.', [':extend_link' => Url::fromRoute('system.modules_list')->toString()]) . '</dt>';
       $output .= '</dl>';
 
       $output .= '<p>' . t('For more information, please visit the <a href=":project_link">official project page on Drupal.org</a>.', [':project_link' => 'https://www.drupal.org/project/block_cache']) . '</p>';
